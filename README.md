@@ -1,41 +1,40 @@
+# Local run
+1\. From the root
+``` npm install ```
+
+2\. Run the start script
+``` npm start ```
+
+# Create image
+1\. CD to root of project.
+2\.
+``` docker build -t mgm-scim-v1 -f docker/Dockerfile . ```
+
+# Create docker container
+``` docker run -d -p 80:8000 --name=mgm-scim-v1 mgm-scim-v1:latest ```
+
 # Okta-Scim-Server
 Sample SCIM server written in NodeJS that supports Users and Groups (with group memberships!). This can be used in conjunction with the Okta SCIM application to test SCIM capabilities. Includes action logging.
 
 ## Users endpoint
-
 1\. Create User (POST to {SCIM Base Url}/Users)
-
-
 2\. Get Users (GET to {SCIM Base Url}/Users)
-
-
 3\. Get User By Id (GET to {SCIM Base Url}/Users/:UserId)
-
-
 4\. Deactivate User (PATCH to {SCIM Base Url}/Users/:UserId)
-
-
 5\. Modify/Update User (PUT to {SCIM Base Url}/Users/:UserId)
 
 ## Groups endpoint
-
 1\. Create Group (POST to {SCIM Base Url}/Groups)
-
 2\. Get Groups (GET to {SCIM Base Url}/Groups)
-
 3\. Get Group By Id (GET to {SCIM Base Url}/Groups/:GroupId)
-
 4\. Modify Group Name (PATCH to {SCIM Base Url}/Groups/:GroupId)
-
 5\. Update Group (PUT to {SCIM Base Url}/Groups/:GroupId)
 
 # Required Packages
 You need to install [NodeJS](https://nodejs.org/en/) and npm (comes with NodeJS). The project contains a `package.json` file that npm can use to install dependencies. To do this, follow these steps:
 
 1\. Open Command Prompt (or Terminal)
-
 2\. `cd` to the place where you extracted this project
-
 3\. `npm install` in the folder where the `package.json` file is located
 
 # Running and Testing the Server

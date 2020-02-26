@@ -25,7 +25,11 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-let port = process.env.PORT || 8081; // Support for Heroku
+let port = process.env.PORT || 8000; // Support for Heroku
+
+app.get('/health', (req, res) => {
+	res.send('I am up :)');
+});
 
 /**
  * GET {{baseUrl}}/scim/v2/Users
